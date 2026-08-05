@@ -1,0 +1,15 @@
+# Core detector/training dependencies.
+torch>=2.2.1
+numpy>=1.26
+scikit-learn>=1.4
+matplotlib>=3.8
+transformers>=4.41.2
+sentence-transformers>=3.0
+nltk>=3.8
+tqdm>=4.66
+pyyaml>=6.0.1
+python-dotenv>=1.0.1
+openai>=1.59.7
+
+# Vendored benchmark framework and its provider dependencies.
+-e third_party/AutoDojo/agentdojo[transformers]

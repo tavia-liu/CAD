@@ -1,0 +1,32 @@
+# Local secrets
+.env
+
+# Python/runtime caches
+__pycache__/
+*.pyc
+.DS_Store
+._*
+
+# Generated embeddings and model checkpoints
+outputs/embeddings/*.pt
+outputs/embeddings/**/*.pt
+outputs/embeddings/*.pth
+outputs/embeddings/**/*.pth
+outputs/embeddings/*.npy
+outputs/embeddings/**/*.npy
+outputs/embeddings/*.npz
+outputs/embeddings/**/*.npz
+outputs/embeddings/*.part-*
+outputs/embeddings/**/*.part-*
+outputs/models/*.pt
+outputs/models/**/*.pt
+outputs/models/*.pth
+outputs/models/**/*.pth
+
+# Benchmark outputs
+/runs/
+/logs/
+/results/
+
+# Local data (not published)
+data/
