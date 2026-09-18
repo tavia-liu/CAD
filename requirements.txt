@@ -4,6 +4,7 @@ numpy>=1.26
 scikit-learn>=1.4
 matplotlib>=3.8
 transformers>=4.41.2
+huggingface_hub>=0.34
 sentence-transformers>=3.0
 nltk>=3.8
 tqdm>=4.66

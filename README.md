@@ -19,13 +19,21 @@ export AGENTDOJO_DEFENSE_PLUGINS=detector
 
 For API-backed runs, copy `.env.example` to `.env` and add your own keys.
 
-A pretrained classifier checkpoint is included:
+## Data and checkpoints
+
+The data and trained classifiers are hosted on Hugging Face:
+[tavialiu/CAD-data](https://huggingface.co/datasets/tavialiu/CAD-data) and
+[tavialiu/CAD-models](https://huggingface.co/tavialiu/CAD-models).
 
 ```bash
+hf download tavialiu/CAD-data --repo-type dataset --local-dir data
+for f in data/*.tar.gz; do tar -xzf "$f" -C data; done
+
+hf download tavialiu/CAD-models --local-dir outputs/models
 export CLASSIFIER_WEIGHT_PATH="$PWD/outputs/models/classifier_fullcad.pt"
 ```
 
-To rebuild the embeddings and classifier from scratch instead:
+To rebuild the embeddings and classifier from the data instead:
 
 ```bash
 bash scripts/rebuild_classifier.sh

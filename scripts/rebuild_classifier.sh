@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Rebuild the Full-CAD embeddings and classifier from included JSON data.
+# Rebuild the Full-CAD embeddings and classifier from the JSON data in data/
+# (downloaded from Hugging Face; see README).
 # Run from the artifact root:
 #   bash scripts/rebuild_classifier.sh
 
@@ -38,7 +39,7 @@ python -m detector.train_and_eval \
 echo "Wrote outputs/models/classifier_fullcad.pt"
 
 # Paraphrase-bank embeddings consumed by adversarial_training.llm_paraphrase
-# (--para-files). Built per suite from the included paraphrased JSON.
+# (--para-files). Built per suite from the paraphrased JSON.
 for suite in banking slack travel; do
   python -m detector.build_embeddings \
     --input_dir "data/training_data_paraphrased/agentdojo_${suite}_scenarios" \
